@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.bokeh.org/bokeh/release/bokeh.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Data Warehousing 1145200-63</title>
+        <style>
+            
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+                list-style: none;
+                padding: 0;
+            }
+    
+            .grid-item {
+                text-align: center;
+            }
+    
+            .grid-item button {
+                background-color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                width: 100%;
+            }
+            hr {
+                border: none;
+                border-top: 1px solid #ccc; 
+                margin: 20px 0; 
+            }
+            .container {
+                position: relative;
+                text-align: center;
+            }
+
+            img {
+                width: 80%;
+                height: auto;
+                display: block; 
+                margin: 0 auto;
+            }
+            .card {
+                border: 1px solid #ffffff;
+                padding: 20px;
+                margin: 5px;
+                text-align: left; 
+            }
+
+            .card-title {
+                font-size: 30px;
+            }
+
+            .card-lis {
+                font-size: 15px;
+            }
+
+            .card-lins {
+                font-size: 15px;
+                text-align: left;
+            }
+
+            .text-lis {
+                font-size: 20px;
+            }
+
+            .card-between {
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+            }
+
+            .text-right {
+                content: ""; 
+                float: right; 
+            }
+
+            .text-listwo {
+                font-size: 10px;
+                color: rgb(31, 109, 31);
+                height: 50px; 
+                display: flex; 
+                align-items: center;
+                justify-content: flex-end; 
+            }
+
+            .card hr {
+                border-color: #ccc; 
+                margin: 10px 0; 
+            }
+
+            .card-top {
+                margin-top: 15px; 
+                border: 1px solid #ffffff;
+                padding: 20px;
+                text-align: left; 
+            }
+            .card-container {
+                border: 1px solid #ccc; 
+                padding: 10px; 
+                border-radius: 10px;
+                width: 300px;
+                height: 200px; 
+            }
+            
+            .button-submit {
+                background-color: #0e7e7a; 
+                color: #fff; 
+                border: none; 
+                border-radius: 5px; 
+                padding: 8px 55px; 
+                cursor: pointer; 
+                font-size: 14px; 
+            }
+
+            button[data-action="submit"]:hover {
+                background-color: #0056b3; 
+            }
+
+
+
+        </style>
+      </head>
+<body>
+    {% block content %}
+    {% endblock %}
+    <script>
+        const submitButton = document.getElementById("submit-button");
+    
+        submitButton.addEventListener("click", function() {
+            const confirm = window.confirm("คุณแน่ใจหรือไม่ว่าต้องการทำเครื่องหมายว่าเสร็จสิ้น?");
+            
+            if (confirm) {
+                alert("คุณได้ทำเครื่องหมายว่าเสร็จสิ้นแล้ว!");
+            }
+        });
+        
+        function toggleList() {
+            var itemList = document.getElementById("itemList");
+            if (itemList.style.display === "none" || itemList.style.display === "") {
+                itemList.style.display = "block";
+            } else {
+                itemList.style.display = "none";
+            }
+        };
+        function changeButtonText() {
+            var button = document.getElementById("submitButton");
+            button.innerHTML = "เสร็จสิ้น";
+        }
+    </script>
+    
+</body>
+</html>
